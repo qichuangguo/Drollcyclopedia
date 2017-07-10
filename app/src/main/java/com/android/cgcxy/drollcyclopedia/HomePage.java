@@ -92,8 +92,10 @@ public class HomePage extends BaseActivity {
             TextView childAt = (TextView) linearLayout.getChildAt(i);
             if(position==i){
                 childAt.setSelected(true);
+                childAt.setTextColor(this.getResources().getColor(R.color.whiter));
             }else {
                 childAt.setSelected(false);
+                childAt.setTextColor(this.getResources().getColor(R.color.black));
             }
         }
 
