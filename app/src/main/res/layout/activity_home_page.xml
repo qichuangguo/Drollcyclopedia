@@ -23,42 +23,52 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/tv_choiceness"
             android:gravity="center"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:background="@drawable/bg_select"
+            android:paddingLeft="15dp"
             android:text="@string/choicenessFragment"/>
 
         <TextView
+            android:id="@+id/tv_video"
             android:gravity="center"
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:paddingLeft="15dp"
             android:layout_height="match_parent"
             android:background="@drawable/bg_select"
             android:text="@string/videoFragmnet"/>
 
         <TextView
+            android:id="@+id/tv_crosstalk"
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:paddingLeft="15dp"
             android:layout_height="match_parent"
             android:gravity="center"
             android:background="@drawable/bg_select"
             android:text="@string/crosstalkFragment"/>
 
         <TextView
+            android:id="@+id/tv_discover"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:gravity="center"
+            android:paddingLeft="15dp"
             android:background="@drawable/bg_select"
             android:text="@string/discoverFragmnet"/>
 
         <TextView
+            android:id="@+id/tv_raillery"
             android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_weight="1.3"
             android:layout_height="match_parent"
             android:gravity="center"
+            android:paddingLeft="20dp"
             android:background="@drawable/bg_select"
             android:text="@string/railleryFragmnet"/>
 
