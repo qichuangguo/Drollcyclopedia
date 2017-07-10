@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.view.ViewPropertyAnimatorCompatSet;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.android.cgcxy.drollcyclopedia.adapter.ViewPagerFragmentAdapter;
 import com.android.cgcxy.drollcyclopedia.base.BaseActivity;
@@ -26,6 +28,7 @@ public class HomePage extends BaseActivity {
     private ViewPager viewPager;
     List<Fragment> mFragmentList = new ArrayList<Fragment>();
     private ViewPagerFragmentAdapter adapter;
+    private LinearLayout linearLayout;
 
     @Override
     protected int getLayoutId() {
@@ -53,8 +56,6 @@ public class HomePage extends BaseActivity {
         mFragmentList.add(raillerfFragment);
 
         adapter = new ViewPagerFragmentAdapter(getSupportFragmentManager(),mFragmentList);
-
-
     }
 
     @Override
@@ -62,6 +63,39 @@ public class HomePage extends BaseActivity {
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(0);
+
+        linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
+        seleteTextBg(0);
+        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                seleteTextBg(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
+    }
+
+    public void seleteTextBg(int position){
+
+        for (int i = 0; i <linearLayout.getChildCount() ; i++) {
+
+            TextView childAt = (TextView) linearLayout.getChildAt(i);
+            if(position==i){
+                childAt.setSelected(true);
+            }else {
+                childAt.setSelected(false);
+            }
+        }
 
     }
 }
