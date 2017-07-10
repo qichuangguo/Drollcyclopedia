@@ -11,7 +11,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:visibility="visible"
         android:background="@mipmap/header_bg_ui255">
     </RelativeLayout>
 
