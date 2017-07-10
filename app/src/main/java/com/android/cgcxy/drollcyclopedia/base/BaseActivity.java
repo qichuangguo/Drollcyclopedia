@@ -18,7 +18,7 @@ public abstract class BaseActivity extends FragmentActivity {
         setContentView(getLayoutId());
         onAfterActivityCreate();
     }
-
+    protected abstract void initView();
     protected abstract int getLayoutId();
     protected abstract void onAfterActivityCreate();
 
