@@ -2,23 +2,16 @@ package com.android.cgcxy.drollcyclopedia;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.view.ViewPropertyAnimatorCompatSet;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import com.android.cgcxy.drollcyclopedia.adapter.ViewPagerFragmentAdapter;
 import com.android.cgcxy.drollcyclopedia.base.BaseActivity;
-import com.android.cgcxy.drollcyclopedia.base.BaseFragment;
 import com.android.cgcxy.drollcyclopedia.fragments.ChoicenessFragment;
 import com.android.cgcxy.drollcyclopedia.fragments.CrosstalkFragment;
 import com.android.cgcxy.drollcyclopedia.fragments.DiscoverFragment;
 import com.android.cgcxy.drollcyclopedia.fragments.RailleryFragment;
 import com.android.cgcxy.drollcyclopedia.fragments.VideoFragment;
-
-import java.text.ChoiceFormat;
 import java.util.ArrayList;
 import java.util.List;
 
