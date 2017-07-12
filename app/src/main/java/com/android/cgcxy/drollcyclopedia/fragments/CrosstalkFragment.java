@@ -1,19 +1,17 @@
 package com.android.cgcxy.drollcyclopedia.fragments;
 
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 import com.android.cgcxy.drollcyclopedia.R;
 import com.android.cgcxy.drollcyclopedia.base.BaseFragment;
+import com.android.cgcxy.drollcyclopedia.base.Constant;
+import com.android.cgcxy.drollcyclopedia.presenter.DataPresenter;
+import com.android.cgcxy.drollcyclopedia.presenter.DataPresenterImpl;
 
 /**段子
  * A simple {@link Fragment} subclass.
  */
-public class CrosstalkFragment extends BaseFragment {
+public class CrosstalkFragment extends BaseFragment implements ShowView{
 
 
     public CrosstalkFragment() {
@@ -33,7 +31,8 @@ public class CrosstalkFragment extends BaseFragment {
 
     @Override
     protected void onAfterActivityCreated() {
-
+        DataPresenterImpl dataPresenter = new DataPresenterImpl(this,getActivity());
+        dataPresenter.getData(Constant.CROSSTALKTIME);
     }
 
 }
