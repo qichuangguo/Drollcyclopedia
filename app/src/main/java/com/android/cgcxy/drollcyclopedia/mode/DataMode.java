@@ -8,5 +8,6 @@ import android.content.Context;
 
 public interface DataMode {
 
-    void getJsonData(String url);
+    void getCrosstalkTimeJsonData(String url,RefreshListener ref);
+    void getCrosstalkValidJsonData(String url,RefreshListener ref);
 }

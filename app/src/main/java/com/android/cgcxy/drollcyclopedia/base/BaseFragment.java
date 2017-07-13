@@ -1,6 +1,7 @@
 package com.android.cgcxy.drollcyclopedia.base;
 
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,10 +14,13 @@ import android.view.ViewGroup;
 
 public abstract class BaseFragment extends Fragment {
 
+    private View mMainView;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        return  inflater.inflate(getLayoutId(), container, false);
+        mMainView = inflater.inflate(getLayoutId(), container, false);
+        return mMainView;
     }
 
     @Override
@@ -24,6 +28,14 @@ public abstract class BaseFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         initView();
         onAfterActivityCreated();
+    }
+
+    protected <T extends View> T findViewById(int id){
+
+        if(mMainView!=null){
+            return (T)mMainView.findViewById(id);
+        }
+        return null;
     }
 
     protected abstract int getLayoutId();

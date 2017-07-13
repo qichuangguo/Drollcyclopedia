@@ -5,4 +5,6 @@ package com.android.cgcxy.drollcyclopedia.fragments;
  */
 
 public interface ShowView {
+
+    <T> void setData(T t);
 }
