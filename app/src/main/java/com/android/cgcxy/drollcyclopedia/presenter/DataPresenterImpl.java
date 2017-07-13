@@ -5,17 +5,10 @@ import android.content.Context;
 import com.android.cgcxy.drollcyclopedia.base.Constant;
 import com.android.cgcxy.drollcyclopedia.bean.CrosstalkBean;
 import com.android.cgcxy.drollcyclopedia.bean.CrosstalkTimeBean;
-import com.android.cgcxy.drollcyclopedia.fragments.CrosstalkFragment;
 import com.android.cgcxy.drollcyclopedia.fragments.ShowView;
 import com.android.cgcxy.drollcyclopedia.mode.DataModeImpl;
 import com.android.cgcxy.drollcyclopedia.mode.RefreshListener;
 import com.android.volley.VolleyError;
-
-import java.io.UnsupportedEncodingException;
-import java.net.URL;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
