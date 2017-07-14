@@ -1,20 +1,15 @@
 package com.android.cgcxy.drollcyclopedia.adapter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import com.android.cgcxy.drollcyclopedia.R;
 import com.android.cgcxy.drollcyclopedia.bean.CrosstalkBean;
-import com.android.cgcxy.drollcyclopedia.mode.RefreshListener;
 import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Transformation;
 
 import java.util.List;
 
@@ -45,7 +40,6 @@ public class CrosstalkRecycleAdapter extends RecyclerView.Adapter<CrosstalkRecyc
             return;
         }
         String content = crosstalkBean.get(position).getContent();
-        System.out.println("======content===="+content);
         holder.tv_content.setText(content);
         holder.tv_name.setText(crosstalkBean.get(position).getUser_name());
         Picasso.with(mContext).load(crosstalkBean.get(position).getAvatar()).into(holder.image_ico);
