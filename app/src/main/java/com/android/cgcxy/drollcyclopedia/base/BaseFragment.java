@@ -1,5 +1,6 @@
 package com.android.cgcxy.drollcyclopedia.base;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
@@ -15,7 +16,14 @@ import android.view.ViewGroup;
 public abstract class BaseFragment extends Fragment {
 
     private View mMainView;
+    protected BaseActivity mActivity;
 
+    @SuppressWarnings("deprecation")
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        mActivity= (BaseActivity) activity;
+    }
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -41,4 +49,10 @@ public abstract class BaseFragment extends Fragment {
     protected abstract int getLayoutId();
     protected abstract void initView();
     protected abstract void onAfterActivityCreated();
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        MyApplication.getHttpQueue().cancelAll("volleyget");
+    }
 }
