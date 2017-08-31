@@ -5,20 +5,21 @@
                 android:orientation="vertical">
 
     <LinearLayout
+        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:background="@color/white"
-        android:orientation="vertical"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/white"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-           >
+            android:padding="10dp"
+            >
 
             <com.android.cgcxy.drollcyclopedia.view.XCRoundImageView
                 android:id="@+id/iv_item_fragment_choiceness_avatar"
@@ -38,57 +39,149 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_gray_border"
                 android:layout_gravity="center_vertical"
+                android:background="@drawable/bg_gray_border"
+                android:paddingBottom="4dp"
                 android:paddingLeft="6dp"
                 android:paddingRight="6dp"
                 android:paddingTop="4dp"
-                android:paddingBottom="4dp"
-                android:textSize="10sp"
                 android:text="举报"
-                android:textColor="@color/text_light_gray"/>
+                android:textColor="@color/text_light_gray"
+                android:textSize="10sp"/>
         </LinearLayout>
+
         <TextView
             android:id="@+id/tv_item_fragment_choiceness_content"
-            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
             android:text="content"
             android:textColor="@color/text_content"
+            />
+
+        <ImageView
+            android:id="@+id/iv_item_fragment_choiceness_media_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="10dp"
+            android:scaleType="fitXY"
             />
+        <ImageView
+            android:id="@+id/iv_item_fragment_choiceness_media_data_gif"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="6dp"
+            android:visibility="gone"
+            android:layout_marginBottom="10dp"
+            android:scaleType="fitXY"
+            />
+        <LinearLayout
+            android:id="@+id/ll_item_fragment_choiceness_hot_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:padding="10dp"
+            android:background="@drawable/bg_gray_fillet"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#de5227"
+                    android:paddingRight="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingLeft="8dp"
+                    android:paddingBottom="4dp"
+                    android:layout_gravity="center"
+                    android:text="神评论"
+                    android:textColor="@color/white"/>
+                <TextView
+                    android:id="@+id/tv_item_fragment_choiceness_hot_comment_author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textColor="#de5227"
+                    android:text="name"/>
+                <TextView
+                    android:id="@+id/tv_item_fragment_choiceness_hot_comment_like"
+                    android:drawableLeft="@drawable/praise_enable"
+                    android:drawablePadding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:paddingTop="2dp"
+                    android:text="2"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_item_fragment_choiceness_hot_comment_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="content"/>
+        </LinearLayout>
+
         <TextView
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="1dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
             android:background="@color/line_gray"/>
+
         <LinearLayout
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="10dp">
+
             <TextView
                 android:id="@+id/tv_item_fragment_choiceness_like_start"
+                android:drawableLeft="@drawable/grade_icon"
+                android:drawablePadding="5dp"
                 android:layout_width="wrap_content"
+                android:gravity="center_vertical"
                 android:layout_height="wrap_content"
-                android:text="喜欢 1"/>
+                android:text="1"/>
+
             <TextView
                 android:id="@+id/tv_item_fragment_choiceness_dislike_start"
-                android:layout_marginLeft="10dp"
+                android:drawableLeft="@drawable/grade_no_icon"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
                 android:layout_width="wrap_content"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="讨厌 1"/>
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:text="1"/>
+
             <TextView
                 android:id="@+id/tv_item_fragment_choiceness_comment_total"
+                android:drawableLeft="@drawable/color_for_danmu_normal"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="评论 1"/>
+                android:text="1"/>
+
             <TextView
-                android:layout_marginLeft="15dp"
+                android:id="@+id/tv_item_fragment_choiceness_share"
+                android:background="@drawable/reading_last_share"
+                android:gravity="center_vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="分享"/>
+                android:layout_marginLeft="15dp"
+                />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

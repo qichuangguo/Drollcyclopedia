@@ -2,8 +2,16 @@ package com.android.cgcxy.drollcyclopedia.fragments;
 
 
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.cgcxy.drollcyclopedia.Choiceness.ChoicenessDetailsActivity;
 import com.android.cgcxy.drollcyclopedia.base.BaseVolleyData;
 import com.android.cgcxy.drollcyclopedia.Choiceness.adapter.ChoicenessAdapter;
 import com.android.cgcxy.drollcyclopedia.Choiceness.entity.ChoicenessEntity;
@@ -30,20 +38,19 @@ public class ChoicenessFragment extends BaseFragment {
     private ChoicenessAdapter mChoicenessAdapter;
 
     public ChoicenessFragment() {
-    }
 
+    }
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_choiceness;
     }
-
     @Override
     protected void initView() {
         lv_fragment_choiceness = (ListView) getView().findViewById(R.id.lv_fragment_choiceness);
     }
-
     @Override
-    protected void onAfterActivityCreated() {
+    public void onResume() {
+        super.onResume();
 
         BaseVolleyData.getJSONObject(Constant.SELECTION_URL, new BaseVolleyData.VolleyJsonCallback() {
             @Override
@@ -52,8 +59,16 @@ public class ChoicenessFragment extends BaseFragment {
                 mChoicenessEntity.addAll(mChoicenessListEntity.mChoicenessEntities);
                 mChoicenessAdapter = new ChoicenessAdapter(mActivity, mChoicenessEntity);
                 lv_fragment_choiceness.setAdapter(mChoicenessAdapter);
-
+                lv_fragment_choiceness.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        ChoicenessDetailsActivity.launchActivity(mActivity,mChoicenessEntity.get(position));
+                    }
+                });
             }
         });
+    }
+    @Override
+    protected void onAfterActivityCreated() {
     }
 }

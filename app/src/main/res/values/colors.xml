@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryDark">#f8a514</color>
     <color name="colorAccent">#FF4081</color>
     <color name="main_title_bg">#F79100</color>
 
     <color name="FFCF24">#FFCF24</color>
+    <color name="base_bg">#f8a514</color>
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
 
@@ -14,10 +15,12 @@
     <!--横线颜色-->
     <color name="line_gray">#e2e2e2</color>
     <!--主色_灰-->
-    <color name="base_gray">#f3f3f3</color>
+    <color name="base_gray">#eaeaea</color>
     <!--文字浅灰色-->
     <color name="text_light_gray">#999999</color>
     <!--文字正文色-->
     <color name="text_content">#767575</color>
+    <!--文字标题色-->
+    <color name="text_title">#333333</color>
 
 </resources>

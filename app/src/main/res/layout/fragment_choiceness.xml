@@ -5,14 +5,25 @@
              android:background="@color/base_gray"
              tools:context="com.android.cgcxy.drollcyclopedia.fragments.ChoicenessFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!--<com.example.sch.myapplication.PageRecyclerView-->
+        <!--android:id="@+id/cusom_swipe_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
+
+    <!--<com.example.sch.myapplication.PageIndicatorView-->
+        <!--android:id="@+id/indicator"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_marginBottom="20dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom"/>-->
     <ListView
         android:id="@+id/lv_fragment_choiceness"
-        android:layout_margin="10dp"
         android:dividerHeight="10dp"
         android:divider="@color/base_gray"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:focusable="false"
+        android:listSelector="#00000000"
         />
 
 </FrameLayout>
